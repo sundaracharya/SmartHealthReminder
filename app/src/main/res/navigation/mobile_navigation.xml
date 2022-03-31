@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="np.com.sundaracharya.smarthealthreminder.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="np.com.sundaracharya.smarthealthreminder.ui.profile.ProfileFragment"
+        android:label="@string/my_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_nav_profile_to_addProfileFragment"
+            app:destination="@id/addProfileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_add_medicine"
+        android:name="np.com.sundaracharya.smarthealthreminder.ui.medicine.MedicineFragment"
+        android:label="@string/medicine_info"
+        tools:layout="@layout/fragment_medicine_info" >
+        <action
+            android:id="@+id/action_nav_add_medicine_to_addMedicineFragment"
+            app:destination="@id/addMedicineFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_doctor_appointment"
+        android:name="np.com.sundaracharya.smarthealthreminder.ui.appointment.DoctorAppointmentFragment"
+        android:label="@string/menu_doctor"
+        tools:layout="@layout/fragment_doctor_appointment" />
+    <fragment
+        android:id="@+id/addMedicineFragment"
+        android:name="np.com.sundaracharya.smarthealthreminder.ui.medicine.AddMedicineFragment"
+        android:label="@string/menu_medicine" >
+        <action
+            android:id="@+id/action_addMedicineFragment_to_nav_add_medicine"
+            app:destination="@id/nav_add_medicine" />
+    </fragment>
+    <fragment
+        android:id="@+id/addProfileFragment"
+        android:name="np.com.sundaracharya.smarthealthreminder.ui.profile.AddProfileFragment"
+        android:label="@string/menu_add_profile"
+        tools:layout="@layout/fragment_add_profile">
+        <action
+            android:id="@+id/action_addProfileFragment_to_nav_profile"
+            app:destination="@id/nav_profile" />
+    </fragment>
+
+</navigation>
